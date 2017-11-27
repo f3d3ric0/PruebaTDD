@@ -12,20 +12,18 @@ final class CalculadoraTest extends TestCase
 		$this->assertEquals(7,$calc->suma(3,4));
 	}
 
-	public function testFailure()
+	public function testArray()
     {
     	$array = new CA();
-        $this->assertArrayHasKey('foo', $array->cargarArray(['foo' => 'baz']));
+        $this->assertArrayHasKey('foo', $array->retornarArray(['foo' => 'baz']));
     }
 
+    public function testArrayVacio()
+    {
+    	$aux = new CA();
+    	$array2 = [];
+        $this->assertNotEmpty($aux->cargarArray($array2));
+    }
 }
 
-// class ArrayHasKeyTest extends TestCase
-// {
-//     public function testFailure()
-//     {
-//     	$array = new CA();
-//         $this->assertArrayHasKey('foo', $array->cargarArray(['bar' => 'baz']));
-//     }
-// }
 ?>
